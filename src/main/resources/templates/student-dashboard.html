@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Student Dashboard</title>
+</head>
+<body>
+    <h1>Welcome to Student Dashboard</h1>
+    <nav>
+        <ul>
+            <li><a th:href="@{/student-dashboard/student/give-feedback}">Give Feedback</a></li>
+            <li><a th:href="@{/student/view-feedback}">View Feedback</a></li>
+            <li><a th:href="@{/student/profile}">View Profile</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+    </nav>
+
+    <h2>Your Feedbacks</h2>
+    <div>
+        <!-- Add content for viewing feedbacks -->
+    </div>
+</body>
+</html>

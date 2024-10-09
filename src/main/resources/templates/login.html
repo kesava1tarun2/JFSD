@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        /* Keyframes for the background animation */
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(270deg, #4CAF50, #2196F3, #FF9800);
+            background-size: 600% 600%; /* For smoother motion */
+            animation: gradient 15s ease infinite; /* Animation effect */
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        .login-container {
+            width: 350px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            text-align: center;
+        }
+
+        h2 {
+            color: #333; /* Darker color for contrast */
+            margin-bottom: 20px;
+        }
+
+        input[type=text], input[type=password] {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+        }
+
+        input[type=text]:focus, input[type=password]:focus {
+            border-color: #4CAF50; /* Highlight on focus */
+            outline: none;
+        }
+
+        button {
+            background-color: #4CAF50; /* Button color */
+            color: white;
+            padding: 14px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049; /* Darker shade on hover */
+        }
+
+        a {
+            text-decoration: none;
+            color: #4CAF50; /* Link color */
+            margin: 5px 0;
+            display: inline-block;
+        }
+
+        a:hover {
+            text-decoration: underline; /* Underline effect on hover */
+        }
+
+        p.error {
+            color: red; /* Error message color */
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form action="/login" method="POST">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required />
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required />
+
+            <button type="submit">Login</button>
+        </form>
+        <p class="error" th:if="${error}" th:text="${error}"></p>
+        <a href="/student/register">Register as Student</a> | <a href="/admin/register">Register as Admin</a>
+    </div>
+</body>
+</html>
